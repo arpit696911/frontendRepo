@@ -21,7 +21,10 @@ export default function App() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8000/analyze", formData);
+      const res = await axios.post(
+        "https://backendrepo-itmg.onrender.com/analyze",
+        formData
+      );
       setMessage(res.data.message || "Email sent successfully.");
     } catch (err) {
       setMessage("Error sending request.");
